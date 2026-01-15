@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Chat</title>
+  <style>
+    body {
+      background: #0f172a;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #chat {
+      background: #020617;
+      width: 90%;
+      max-width: 500px;
+      height: 350px;
+      margin: 10px auto;
+      padding: 10px;
+      overflow-y: auto;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .msg {
+      max-width: 70%;
+      padding: 8px 12px;
+      border-radius: 10px;
+      word-wrap: break-word;
+    }
+
+    .me {
+      align-self: flex-end;
+      background: #2563eb;
+    }
+
+    .stranger {
+      align-self: flex-start;
+      background: #334155;
+    }
+
+    input {
+      width: 60%;
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background: #475569;
+    }
+
+    #typing {
+      font-style: italic;
+      color: #94a3b8;
+    }
+
+    #stats {
+      background: #020617;
+      width: 90%;
+      max-width: 500px;
+      margin: 10px auto;
+      padding: 8px;
+      border-radius: 8px;
+      text-align: left;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+<h3 id="online">Online: 0</h3>
+
+<div id="stats">
+  <p id="connections"></p>
+  <p id="matches"></p>
+  <p id="messages"></p>
+  <p id="reports"></p>
+</div>
+
+<h2 id="status">Connecting...</h2>
+<p id="name"></p>
+<p id="timer"></p>
+<p id="typing"></p>
+
+<div id="chat"></div>
+
+<input id="msg" placeholder="Type message..." disabled>
+<button id="send" disabled>Send</button>
+<button id="next">Next</button>
+<button id="report">Report</button>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
